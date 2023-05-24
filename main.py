@@ -5,7 +5,12 @@ def menu():
     print("1. Random quote")
     print("2. All quotes")
     print("3. Exit")
-
+def add_quote(quotes, filename):
+    new_quote = input("Enter a new quote: ")
+    quotes.append(new_quote)
+    
+    with open(filename, 'a') as file:
+        file.write(new_quote)
 def main():
     while True:
         quotes = load_quotes("quotes.txt")
